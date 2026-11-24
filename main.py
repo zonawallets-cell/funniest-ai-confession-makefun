@@ -30,6 +30,8 @@ def validate(line: str) -> None:
         )
     if "\n" in line or "\r" in line:
         raise ValueError("confession must be a single line")
+    if line != line.strip():
+        raise ValueError("confession must not start or end with whitespace")
 
 
 def main() -> int:
